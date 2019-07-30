@@ -1,0 +1,113 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "4b7e8299-c0fb-40cc-9974-7d7010d105c9": {
+        "id": "4b7e8299-c0fb-40cc-9974-7d7010d105c9",
+        "parent": null,
+        "name": "sigma-express-test",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "2031e254-e9da-485a-8e46-e216769b49e1"
+        ],
+        "isRemovable": false,
+        "filePath": "sigma-express-test"
+      },
+      "2031e254-e9da-485a-8e46-e216769b49e1": {
+        "id": "2031e254-e9da-485a-8e46-e216769b49e1",
+        "parent": "4b7e8299-c0fb-40cc-9974-7d7010d105c9",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "sigma-express-test/lambda.js",
+        "code": "const serverless =  require('serverless-http');\nconst express = require('express');\n\n\nconst app = express()\n\napp.get('/', function (req, res) {\n  res.send('sigma express success')\n})\n\n\n\n\nexports.handler = function(event, context, callback) {\n    \n    event = app;\n}\n\n\n",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigusEast1testExpressany",
+            "config": {}
+          }
+        ]
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "4b7e8299-c0fb-40cc-9974-7d7010d105c9",
+    "openFiles": [
+      "2031e254-e9da-485a-8e46-e216769b49e1"
+    ],
+    "currentFileId": "2031e254-e9da-485a-8e46-e216769b49e1",
+    "resources": {
+      "apigusEast1testExpressany": {
+        "name": "apigusEast1testExpressany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 0,
+          "apiName": "testExpress",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "",
+          "resourcePath": "/",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "dev",
+          "mode": 0
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "express": {
+          "name": "express",
+          "version": "4.17.1",
+          "language": "javascript"
+        },
+        "serverless-http": {
+          "name": "serverless-http",
+          "version": "2.0.2",
+          "language": "javascript"
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "sigma-express-test",
+    "projectDescription": "testing the express app inside the sigma env",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1564470932021
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "sigma-express-test",
+      "url": "https://github.com/lpssudarshana/sigma-express-test"
+    }
+  }
+}
