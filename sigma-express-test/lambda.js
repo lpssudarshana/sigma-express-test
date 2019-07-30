@@ -10,10 +10,9 @@ app.get('/user', function (req, res) {
 
 let serverless_function = serverless(app);
 
-exports.handler = function(event, context, callback) {
+exports.handler = async function(event, context) {
     debugger;
-    callback(null, "success")
-    serverless_function(event, context, callback)
+   return await serverless_function(event, context)
 }
 
 
