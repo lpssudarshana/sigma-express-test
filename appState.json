@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "sigma-express-test/lambda.js",
-        "code": "const serverless =  require('serverless-http');\nconst express = require('express');\n\n\nconst app = express()\n\napp.get('/', function (req, res) {\n  res.send('sigma express success')\n})\n\n\n\n\nexports.handler = function(event, context, callback) {\n    \n    event = app;\n}\n\n\n",
+        "code": "const serverless =  require('serverless-http');\nconst express = require('express');\n\nconst app = express()\n\napp.get('/', function (req, res) {\n  res.send('sigma express success')\n})\n\nexports.handler = function(event, context, callback) {\n    \n    event = serverless(app);\n}\n\n\n",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -101,7 +101,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564470932021
+    "lastSave": 1564471054363
   },
   "VCS_STATE": {
     "provider": "GitHub",
