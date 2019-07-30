@@ -15,7 +15,7 @@ app.get('/product', function (req, res) {
 
 app.get('/sales', function (req, res) {
     debugger;
-  res.send('sigma express success --- product endpoint')
+  res.send('sigma express success --- sales endpoint')
 })
 
 let serverless_function = serverless(app);

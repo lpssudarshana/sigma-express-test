@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "sigma-express-test/lambda.js",
-        "code": "const serverless =  require('serverless-http');\nconst express = require('express');\n\nconst app = express()\n\napp.get('/user', function (req, res) {\n    debugger;\n  res.send('sigma express success --- user endpoint')\n})\n\napp.get('/product', function (req, res) {\n    debugger;\n  res.send('sigma express success --- product endpoint')\n})\n\napp.get('/sales', function (req, res) {\n    debugger;\n  res.send('sigma express success --- product endpoint')\n})\n\nlet serverless_function = serverless(app);\n\nexports.handler = function(event, context, callback) {\n    debugger;\n   return serverless_function(event, context, callback)\n}\n\n\n",
+        "code": "const serverless =  require('serverless-http');\nconst express = require('express');\n\nconst app = express()\n\napp.get('/user', function (req, res) {\n    debugger;\n  res.send('sigma express success --- user endpoint')\n})\n\napp.get('/product', function (req, res) {\n    debugger;\n  res.send('sigma express success --- product endpoint')\n})\n\napp.get('/sales', function (req, res) {\n    debugger;\n  res.send('sigma express success --- sales endpoint')\n})\n\nlet serverless_function = serverless(app);\n\nexports.handler = function(event, context, callback) {\n    debugger;\n   return serverless_function(event, context, callback)\n}\n\n\n",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -147,7 +147,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564478350117
+    "lastSave": 1564478686093
   },
   "VCS_STATE": {
     "provider": "GitHub",
