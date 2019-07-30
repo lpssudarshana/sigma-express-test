@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "sigma-express-test/lambda.js",
-        "code": "const serverless =  require('serverless-http');\nconst express = require('express');\n\nconst app = express()\n\napp.get('/user', function (req, res) {\n    debugger;\n  res.send('sigma express success')\n})\n\nlet serverless_function = serverless(app);\n\nexports.handler = function(event, context, callback) {\n    debugger;\n   return serverless_function(event, context, callback)\n}\n\n\n",
+        "code": "const serverless =  require('serverless-http');\nconst express = require('express');\n\nconst app = express()\n\napp.get('/user', function (req, res) {\n    debugger;\n  res.send('sigma express success --- user endpoint')\n})\n\napp.get('/product', function (req, res) {\n    debugger;\n  res.send('sigma express success --- product endpoint')\n})\n\nlet serverless_function = serverless(app);\n\nexports.handler = function(event, context, callback) {\n    debugger;\n   return serverless_function(event, context, callback)\n}\n\n\n",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -32,7 +32,7 @@
         },
         "triggers": [
           {
-            "resourceName": "apigusEast1testExpressany",
+            "resourceName": "apigusEast1testExpressparamany",
             "config": {}
           }
         ],
@@ -84,7 +84,26 @@
           "resourceName": "user",
           "resourcePath": "/user",
           "restMethod": "ANY",
-          "proxyIntegration": false,
+          "proxyIntegration": true,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "dev",
+          "mode": 0
+        }
+      },
+      "apigusEast1testExpressparamany": {
+        "name": "apigusEast1testExpressparamany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 0,
+          "apiName": "testExpress",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "{param}",
+          "resourcePath": "/{param}",
+          "restMethod": "ANY",
+          "proxyIntegration": true,
           "enableCORS": false,
           "stageMode": 0,
           "stageName": "dev",
@@ -128,7 +147,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564477791339
+    "lastSave": 1564478151758
   },
   "VCS_STATE": {
     "provider": "GitHub",

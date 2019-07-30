@@ -5,7 +5,12 @@ const app = express()
 
 app.get('/user', function (req, res) {
     debugger;
-  res.send('sigma express success')
+  res.send('sigma express success --- user endpoint')
+})
+
+app.get('/product', function (req, res) {
+    debugger;
+  res.send('sigma express success --- product endpoint')
 })
 
 let serverless_function = serverless(app);
