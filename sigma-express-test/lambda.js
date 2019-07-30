@@ -12,6 +12,7 @@ let serverless_function = serverless(app);
 
 exports.handler = function(event, context, callback) {
     debugger;
+    callback(null, "success")
     serverless_function(event, context, callback)
 }
 
