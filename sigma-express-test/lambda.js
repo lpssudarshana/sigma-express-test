@@ -7,9 +7,11 @@ app.get('/', function (req, res) {
   res.send('sigma express success')
 })
 
+let serverless_function = serverless(app);
+
 exports.handler = function(event, context, callback) {
     
-    event = serverless(app);
+    serverless_function(event, context, callback)
 }
 
 
